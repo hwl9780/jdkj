@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>调用API</title>
+    <style>
+        h1{
+            color: rgb(59, 98, 230);
+            text-align: center;
+        }
+        #border{
+            width: 600px;
+            height: 200px;
+            text-align: center;
+            border: 1px solid #000000;
+            position: relative;
+            left:50%;
+            top: 50px;
+            margin-left: -300px;
+            padding-top: 40px;
+        }
+        #btn{
+            width: 100px;
+            height:40px;
+            background-color: rgb(59, 98, 230);
+            border-radius: 3px;
+            color: #fff;
+            position: relative;
+            left:50%;
+            margin-left: -50px;
+            bottom: -100px;
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>点击按钮可显示汽车车型</h1>
+    <div id="border"></div>
+    <button id="btn">显示车型</button>
+    <script>
+        var aDiv = document.getElementById('border');
+        var aBtn = document.getElementById('btn');
+        aBtn.onclick =function(){
+            var xhr = new XMLHttpRequest();
+               var url = "http://www.1ke.co/backend/teach/js/json.php";
+                xhr.open( 'post',url,true );
+					xhr.setRequestHeader("Content-Type" , "application/x-www-form-urlencoded");
+					xhr.send();
+					xhr.onreadystatechange = function(){
+						if ( xhr.readyState == 4 && xhr.status == 200)
+						{
+                            var data=JSON.parse(xhr.responseText);
+                            var output='';
+                            output+=`${data.cars} `;
+                            aDiv.innerHTML=output;
+                        };
+                    };
+        };
+    </script>
+</body>
+</html>

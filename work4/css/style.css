@@ -1,0 +1,65 @@
+body{
+    width: 100%;
+    height:100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(205, 207, 207);
+}
+.style1{
+    width: 40%;
+    height: 500px;
+    position: relative;
+    top: 50px;
+    left:50%;
+    margin-top: 20px;
+    margin-left: -300px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #b9b8b8;
+}
+.style1 #prompt{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(59, 98, 230);
+    padding-left: 10px;
+    padding-top: 10px;
+    color: #fff;
+    box-sizing: border-box;
+    display: none;
+}
+
+.form1{
+    padding-top: 20px;
+    margin-left: 20px;
+    line-height: 34px;
+}
+.form1 .text1{
+    width: 200px;
+    height: 30px;
+    border-radius: 3px;
+}
+.form1 button{
+    width: 100px;
+    height:40px;
+    background-color: rgb(59, 98, 230);
+    border-radius: 3px;
+    color: #fff;
+    position: absolute;
+    left:50%;
+    bottom: 40px;
+    margin-left: -50px;
+}
+
+span{
+    font-size: 10px;
+    display: none;
+}
+/*输入错误提示*/
+.false{
+    color: rgb(180, 14, 14);
+    
+}
+/*输入正确提示*/
+.true{
+    color: rgb(19, 146, 57);
+}
