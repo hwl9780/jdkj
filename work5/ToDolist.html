@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lutodolist</title>
+    <link rel="stylesheet" type="text/css" href="css/list.css"/>
+</head>
+<body>
+    <header id="head1">
+        <section class="head2">
+            <form action="javascript:postaction()" id="form">
+                <span for="title">LuList</span>
+                <input type="text" id="title" name="title" placeholder="输入事项" required="required" autocomplete="off">
+            </form>
+        </section>
+    </header>
+    <section id="section1">
+        <h2 onclick="save()">正在进行 <span id="todocount" class="count">0</span></h2>
+        <ol id="todolist" class="demo-box">
+            <li draggable="true">
+                <input type="checkbox" onchange="update(0,&quot;done&quot;,true)">
+                <p id="p-0" onclick="edit(0)">euphoria</p>
+                <a href="javascript:remove(0)">-</a>
+            </li>
+        </ol>
+        <h2>已经完成 <span id="donecount" class="count">0</span></h2>
+        <ul id="donelist"></ul>
+    </section>
+    <footer id="foot1">
+        <a href="javascript:clear();">全部清除</a>
+    </footer>
+    <div id="foot2"></div>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/ToDolist.js"></script>
+</body>
+</html>
