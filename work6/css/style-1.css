@@ -1,0 +1,161 @@
+
+*{ margin:0; padding:0;font-family:'Microsoft yahei';}
+			a{ text-decoration:none;}
+			a img{ display:block; border:none;}
+			li{ list-style:none;}
+body{
+                margin: 0;
+                padding: 0;
+                background-color: #ffffff;
+            }
+/*页面导航*/
+#nav1{
+    width: 20%;
+    height:100%;
+    position: fixed;
+    left: 0px;
+    
+   
+}
+#nav1 .section1{
+    font-size: 1em;
+    margin:100px 0 20px 40px;
+    letter-spacing: 2px;
+}
+#logo{
+    width: 15%;
+    height:18%;
+    border: 3px solid #000000;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 5px 3px;
+}
+#nav1 a{
+    text-decoration: none;
+}
+
+#nav1 .section1 p a{
+    color: #000;
+}
+#nav1 .section1 p a:hover{
+    color: #cc0f0f;
+}
+#nav1 .section2{
+    font-size: 0.5em;
+    margin:40px 0 20px 40px;
+
+}
+#nav1 .section2 p a{
+    color: #7c7979;
+}
+#nav1 .section2 p a:hover{
+    color: #3a3939;
+}
+
+
+
+/*页面主体部分*/
+#bodymain{
+    width:80%;
+    position: absolute;
+    right:0px;
+    
+}
+#bodymain #banner{
+    width: 1245px;
+    height: 700px;
+    margin: 20px;
+    /*border: 1px solid #000;*/
+    overflow:hidden;
+    position:relative;
+
+}
+#banner  ul{ 
+    width:1000%;
+    height:100%;
+    margin-left:-1245px;
+}
+#banner ul li{
+    list-style: none;
+    width:10%;
+    height:100%;
+    float:left;
+}
+#bodymain #banner img{
+    width: 100%;
+    height:100%;
+    box-sizing: border-box;
+}
+#banner:hover .btn div{
+    display:block;
+}
+
+#banner .btn div{
+    width:25px;
+    height:50px;
+    background:rgba(112, 111, 111, 0.9);
+    color:#fff;
+    line-height:35px;
+    text-align:center;
+    cursor:pointer;
+    position:absolute;
+    top:50%;
+    margin-top:-17px;
+    display:none;
+    padding-top: 8px;
+}
+#banner .btn div.left{
+    left:0;
+}
+#banner .btn div.right{
+    right:0;
+}
+
+
+
+
+
+
+/*页面主体下部分*/
+#bodymain #pic1{
+    margin: 20px;
+    
+}
+#bodymain #pic1 div{
+    width: 30%;
+    height:70%;
+    background-color: #f5f5f7;
+}
+#pic1 img{
+    width: 100%;
+}
+#pic1 .pic2{
+    float: left; 
+}
+#pic1 .pic2 img{
+    margin-bottom: 5px;
+}
+#bodymain .pic3{
+    float: left;
+    margin: 0 40px 0 60px;
+}
+#bodymain .pic4{
+    float: right;
+}
+.text1{
+    width: 33%;
+    border: 3px solid #000000;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 5px 3px;
+    letter-spacing: 2px;
+    margin: 40px auto;
+
+}
+#bodymain .pic4 img{
+    width: 70%;
+    margin:30px 10% 10px 15%;
+}
+.claer{
+    clear: both;
+}
