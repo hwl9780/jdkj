@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas实现长按保存图片</title>
+    <style>
+        .text1{
+            margin-left: 40px;
+            font-size: 20px;
+        }
+        
+    
+        .form1{
+            width: 100%;
+            height:20%;
+            margin-top: 40px;
+            font-size: 16px;
+        }
+        .form1 input{
+            height:30px;
+            border: 1px solid #000000;
+            border-radius: 2px;
+            width: 40%;
+        }
+        .form1 button{
+            width: 15%;
+            float: right;
+            height:30px;
+            background-color: rgb(51, 61, 194);
+            border-radius: 4px;
+        }
+        .cla{
+            clear: both;
+        }
+       .img1{
+            margin-top: 10px;
+            height:500px;
+            width: 100%;
+        }
+        img{
+            width: 100%;
+        }
+        .text3{
+            color: rgb(118, 118, 121);
+            text-align: center;
+            display: none;
+        }
+       canvas{
+           
+       }
+    </style>
+</head>
+<body>
+    <div class="form1">
+        请输入您的姓名：<input type="text" id="input1">
+        
+        <button onclick="show1()">提交</button>
+    </div>
+
+    
+<section class="img1" id="canvas1">
+    <img src="img/1.jpg">
+    <p class="text1">生活总有挫折<br/>
+        <span id="text2">陌生人</span>,愿你安好
+    </p>
+</section>
+<p class="text3">长按图片保存</p>
+<div id="mycanvas"></div>
+<div id="myimg"></div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/html2canvas.min.js"></script>
+<script src="js/canvas2image.js"></script>
+<script src="js/base64.js"></script>
+<script>
+        function show1(){
+            var $inp=$('#input1');
+            var $text2=$('#text2');
+            $text2.html($inp.val());
+        
+        html2canvas(document.querySelector("#canvas1")).then(function(canvas){
+				document.querySelector("#mycanvas").appendChild(canvas);
+				var oCanvas = document.getElementsByTagName("canvas")[0];
+				var oImgPng = Canvas2Image.saveAsPNG(oCanvas,true);
+				document.getElementById("myimg").appendChild(oImgPng);
+				$('.text3').show();
+				if($('.text3').is(":visible")){
+					$("#canvas1").hide();
+					$("#mycanvas").hide();
+				}
+            })
+        };
+</script>
+</body>
+</html>
