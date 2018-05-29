@@ -79,7 +79,7 @@ function drawhour(hour,minute){
     ctx.restore();
 };
  /********************************************分针**************************************/
-function drawmin(minute,second){
+ function drawmin(minute,second){
     ctx.save();
     ctx.beginPath();
     var hudu = Math.PI*2/60*minute;
@@ -99,12 +99,13 @@ function drawmin(minute,second){
     ctx.restore();
 }
  /********************************************秒针**************************************/
-function drawsec(second){
+function drawsec(second,bSecond){
     ctx.save();
     ctx.strokeStyle="rgb(200, 218, 38)";
     ctx.beginPath();
     var hudu = Math.PI*2/60*second;
-    ctx.rotate(hudu);
+    var bhudu =  Math.PI*2/60/1000*bSecond;
+    ctx.rotate(hudu+bhudu);
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
     ctx.moveTo(0,20);
@@ -134,20 +135,22 @@ function drawtime(){
     var aHour   = d.getHours();
     var aMinute = d.getMinutes();
     var aSecond = d.getSeconds();
+    var bSecond = d.getMilliseconds();
     var aDay = d.getDate();
     var d1 = d.toDateString();
     var aMonth = d1.split(" ")[1];
-    //console.log(aDay);
+    console.log(aDay);
+    console.log(aSecond);
     draw();
     drawhour(aHour,aMinute);
     drawmin(aMinute,aSecond);
-    drawsec(aSecond);
+    drawsec(aSecond,bSecond);
     drawmon(aMonth,aDay);
     drawcir();
     ctx.restore();
 }
 drawtime();
-setInterval(drawtime,1000);
+setInterval(drawtime,100);
 /*
 下面是一些测试  不需要执行
 var date = new Date("2018/1/13");
