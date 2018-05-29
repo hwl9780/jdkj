@@ -120,6 +120,12 @@ function drawcir(){
     ctx.arc(0,0,3*rem,0,Math.PI*2,false);
     ctx.fill();
 }
+function drawcir2(){
+    ctx.beginPath();
+    ctx.fillStyle ="#000";
+    ctx.arc(0,0,0.5*rem,0,Math.PI*2,false);
+    ctx.fill();
+}
 /********************************************定义月份**************************************/
 function drawmon(month,day){
     ctx.font='14px Arial';
@@ -142,11 +148,12 @@ function drawtime(){
     console.log(aDay);
     console.log(aSecond);
     draw();
+    drawcir();
     drawhour(aHour,aMinute);
     drawmin(aMinute,aSecond);
     drawsec(aSecond,bSecond);
     drawmon(aMonth,aDay);
-    drawcir();
+    drawcir2();
     ctx.restore();
 }
 drawtime();
