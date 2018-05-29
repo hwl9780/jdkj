@@ -3,6 +3,8 @@ div{
     color: #fff;
 }
 #Canvas{
+    width: 300px;
+    height: 300px;
     border:1px solid #c3c3c3; 
     border-radius:10px; 
     background-color: black;

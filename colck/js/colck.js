@@ -145,8 +145,8 @@ function drawtime(){
     var aDay = d.getDate();
     var d1 = d.toDateString();
     var aMonth = d1.split(" ")[1];
-    console.log(aDay);
-    console.log(aSecond);
+    //console.log(aDay);
+    //console.log(aSecond);
     draw();
     drawcir();
     drawhour(aHour,aMinute);
