@@ -79,11 +79,12 @@ function drawhour(hour,minute){
     ctx.restore();
 };
  /********************************************分针**************************************/
-function drawmin(minute){
+function drawmin(minute,second){
     ctx.save();
     ctx.beginPath();
     var hudu = Math.PI*2/60*minute;
-    ctx.rotate(hudu);
+    var bhudu = Math.PI*2/60/60*second;
+    ctx.rotate(hudu+bhudu);
     ctx.lineWidth = 5*rem;
     ctx.lineCap = 'round';
     ctx.moveTo(0,-r/2+40*rem);
@@ -139,7 +140,7 @@ function drawtime(){
     //console.log(aDay);
     draw();
     drawhour(aHour,aMinute);
-    drawmin(aMinute);
+    drawmin(aMinute,aSecond);
     drawsec(aSecond);
     drawmon(aMonth,aDay);
     drawcir();
