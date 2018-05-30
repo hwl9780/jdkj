@@ -51,7 +51,7 @@ function draw(){
     ctx.font='30px Arial ';
     hournum.forEach(function(number,i){
         var hudu = Math.PI*2/12*i;
-        var x=Math.cos(hudu)*(r-40*rem);
+        var x=Math.cos(hudu)*(r-43*rem);
         var y =Math.sin(hudu)*(r-45*rem);
         ctx.fillText(number,x,y);
     });
