@@ -4,26 +4,26 @@ var width = ctx.canvas.width;
 var height = ctx.canvas.height;
 
 var r = width/2;
-var rem=width/200
+var rem=width/200;
 function draw(){
     /********************************************这里定义最外圈圆**************************************/
     ctx.save();
     ctx.strokeStyle="#000";
     ctx.translate(r,r);//这里充值起点将默认的（0，0）设为半斤的点，等于将起点定位中心
     ctx.beginPath();//圆的起点为水平方向（1，0）的位置  等于说是时钟3的方向
-    ctx.arc(0,0,r-25*rem,0,Math.PI*2,false);
+    ctx.arc(0,0,r-35*rem,0,Math.PI*2,false);
     ctx.closePath();
     ctx.stroke();
 /********************************************这里定义外圈刻度 **************************************/
     var minnum = ['15','20','25','30','35','40','45','50','55','60','05','10'];
-    ctx.font='8px Arial ';
+    ctx.font='15px Arial ';
     ctx.fillStyle="#fff";
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     minnum.forEach(function(number,i){
         var hudu = Math.PI*2/12*i;
-        var x=Math.cos(hudu)*(r-25*rem);
-        var y =Math.sin(hudu)*(r-25*rem);
+        var x=Math.cos(hudu)*(r-35*rem);
+        var y =Math.sin(hudu)*(r-35*rem);
         ctx.fillText(number,x,y);
     });
 
@@ -37,8 +37,8 @@ function draw(){
         if(i%5==0){
         }else{
             ctx.save();
-            ctx.moveTo(x*(r-26*rem), y*(r-26*rem));
-            ctx.lineTo(x*(r-22*rem), y*(r-22*rem));
+            ctx.moveTo(x*(r-36*rem), y*(r-36*rem));
+            ctx.lineTo(x*(r-32*rem), y*(r-32*rem));
             ctx.strokeStyle = "rgb(200, 218, 38)";
             ctx.stroke(); 
             ctx.restore();
@@ -48,11 +48,11 @@ function draw(){
 
     /********************************************这里定义小时刻度**************************************/
     var hournum =[3,4,5,6,7,8,9,10,11,12,1,2];
-    ctx.font='20px Arial ';
+    ctx.font='30px Arial ';
     hournum.forEach(function(number,i){
         var hudu = Math.PI*2/12*i;
-        var x=Math.cos(hudu)*(r-35*rem);
-        var y =Math.sin(hudu)*(r-37*rem);
+        var x=Math.cos(hudu)*(r-40*rem);
+        var y =Math.sin(hudu)*(r-45*rem);
         ctx.fillText(number,x,y);
     });
 };
@@ -68,7 +68,7 @@ function drawhour(hour,minute){
     ctx.lineWidth = 8*rem;
     ctx.lineCap = 'round';
     ctx.moveTo(0,-r/2+40*rem);
-    ctx.lineTo(0,(-r/2)+22);
+    ctx.lineTo(0,(-r/2)+42);
     ctx.stroke();
     ctx.lineWidth = 3*rem;
     ctx.strokeStyle = "#fff";
@@ -88,7 +88,7 @@ function drawhour(hour,minute){
     ctx.lineWidth = 5*rem;
     ctx.lineCap = 'round';
     ctx.moveTo(0,-r/2+40*rem);
-    ctx.lineTo(0,(-r/2)-21*rem);
+    ctx.lineTo(0,(-r/2)-11*rem);
     ctx.stroke();
     ctx.lineWidth = 2*rem;
     ctx.strokeStyle = "#fff";
@@ -109,7 +109,7 @@ function drawsec(second,bSecond){
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
     ctx.moveTo(0,20);
-    ctx.lineTo(0,(-r/2)-26*rem);
+    ctx.lineTo(0,(-r/2)-16*rem);
     ctx.stroke();
     ctx.restore();
 }
@@ -127,13 +127,13 @@ function drawcir2(){
     ctx.fill();
 }
 /********************************************定义月份**************************************/
-function drawmon(month,day){
-    ctx.font='14px Arial';
+function drawmon(week,day){
+    ctx.font='20px Arial';
     ctx.save();
-    ctx.fillText(month,20*rem,0);
+    ctx.fillText(week,20*rem,0);
     ctx.restore();
     ctx.fillStyle = "rgb(200, 218, 38)";
-    ctx.fillText(day,43*rem,0);
+    ctx.fillText(day,35*rem,0);
 }
 function drawtime(){
     ctx.clearRect(0,0,width,height);
@@ -144,7 +144,7 @@ function drawtime(){
     var bSecond = d.getMilliseconds();
     var aDay = d.getDate();
     var d1 = d.toDateString();
-    var aMonth = d1.split(" ")[1];
+    var aWeek = d1.split(" ")[0];
     //console.log(aDay);
     //console.log(aSecond);
     draw();
@@ -152,7 +152,7 @@ function drawtime(){
     drawhour(aHour,aMinute);
     drawmin(aMinute,aSecond);
     drawsec(aSecond,bSecond);
-    drawmon(aMonth,aDay);
+    drawmon(aWeek,aDay);
     drawcir2();
     ctx.restore();
 }
