@@ -8,13 +8,18 @@
     <link type="text/css" rel="stylesheet" href="css/show.css"/>
 </head>
 <body>
-    <nav class="nav">这边写头部导航栏</nav>
+    <nav class="nav"><p>网页创于2018年5月30日   目前正在完善  敬请期待  谢谢！</p></nav>
     <div class="box">
         <aside class="aside">
             <div class="module1">
                 <h3>个人资料</h3>
-                <img class="headphoto" src="img/headphoto.jpg"/>
-                <button class="follow">关注</button>
+                <a href="">
+                    <img class="headphoto" src="img/headphoto.jpg"/>
+                </a>
+                <button class="follow" onclick="show1()">
+                    <span class="true">关注</span>
+                    <span class="false">已关注</span>
+                </button>
                 <div class="box2">
                     <div class="work">
                         <p>作品</p>
@@ -22,7 +27,7 @@
                     </div>
                     <div class="yline1"></div>
                     <div class="person">
-                        <p>访问量</p>
+                       <p>访问量</p>
                         <span id="personnum">1</span>
                     </div>
                 </div>
@@ -37,15 +42,19 @@
                     <ul class="date1">
                         <li>
                             <a class="dateleft" href="#">2018年7月</a>
-                            <span class="dateright"><span class="num1">2</span>篇</span>
+                            <span class="dateright"><span class="num187">2</span>篇</span>
                         </li>
                         <li>
                             <a class="dateleft" href="#">2018年6月</a>
-                            <span class="dateright"><span class="num1">2</span>篇</span>
+                            <span class="dateright"><span class="num186">2</span>篇</span>
                         </li>
                         <li>
                             <a class="dateleft" href="#">2018年5月</a>
-                            <span class="dateright"><span class="num1">2</span>篇</span>
+                            <span class="dateright"><span class="num185">2</span>篇</span>
+                        </li>
+                        <li>
+                            <a class="dateleft" href="#">2018年4月</a>
+                            <span class="dateright"><span class="num184">2</span>篇</span>
                         </li>
                     </ul>
                 </div>
@@ -54,15 +63,19 @@
                         <ul class="date1">
                             <li>
                                 <a class="dateleft" href="#">css</a>
-                                <span class="dateright"><span class="num1">2</span>篇</span>
+                                <span class="dateright"><span id="numfl1">2</span>篇</span>
                             </li>
                             <li>
                                 <a class="dateleft" href="#">js</a>
-                                <span class="dateright"><span class="num1">2</span>篇</span>
+                                <span class="dateright"><span id="numfl2">2</span>篇</span>
                             </li>
                             <li>
-                                <a class="dateleft" href="#">移动Web</a>
-                                <span class="dateright"><span class="num1">2</span>篇</span>
+                                <a class="dateleft " href="#">移动Web</a>
+                                <span class="dateright"><span id="numfl3">2</span>篇</span>
+                            </li>
+                            <li>
+                                <a class="dateleft " href="#">Canvas</a>
+                                <span class="dateright"><span id="numfl4">2</span>篇</span>
                             </li>
                         </ul>
                     </div>
@@ -71,10 +84,10 @@
             <div class="order">
                 
             </div>
-            <!--每个项目-->
-            <div class="box3">
+            <!--1每个项目-->
+            <div class="box3 boxnum1">
                 <a href="https://hwl9780.github.io/jdkj/colck/index.html" target="view_window">
-                <img class="bodyimg" src="img/1.png">
+                <img class="bodyimg" src="img/colck.jpg"/>
                 <div>
                     <p class="col1 p1">js实现动态钟表效果</p>
                     <p class="p2">2018年5月29日</p>
@@ -82,8 +95,123 @@
                 </div>
                 </a>
             </div>
-            
+            <!--2每个项目-->
+            <div class="box3 boxnum2 ">
+                <a href="https://hwl9780.github.io/jdkj/resume/index.html" target="view_window">
+                <img class="bodyimg" src="img/jianli.jpg"/>
+                <div>
+                    <p class="col1 p1">网页个人简历</p>
+                    <p class="p2">2018年4月25日</p>
+                    <p class="p3">网页版个人简历</p>
+                </div>
+                </a>
+            </div>
+            <!--3每个项目-->
+            <div class="box3 css1 boxnum1">
+                <a href="https://hwl9780.github.io/jdkj/work2/index.html" target="view_window">
+                <img class="bodyimg" src="img/coffee.jpg"/>
+                <div>
+                    <p class="col1 p1">纯css写咖啡馆网页</p>
+                    <p class="p2">2018年5月1日</p>
+                    <p class="p3">纯css创建咖啡馆网站首页</p>
+                </div>
+                </a>
+            </div>
+            <!--每个项目-->
+            <div class="box3 css1 boxnum1">
+                <a href="https://hwl9780.github.io/jdkj/work3/index.html" target="view_window">
+                <img class="bodyimg" src="img/xycoffee.jpg"/>
+                <div>
+                    <p class="col1 p1">响应式咖啡馆网页</p>
+                    <p class="p2">2018年5月6日</p>
+                    <p class="p3">运动css3动画效果实现咖啡馆网页</p>
+                </div>
+                </a>
+            </div>
+        
+            <!--每个项目-->
+            <div class="box3 boxnum2">
+                <a href="https://hwl9780.github.io/jdkj/work4/index.html" target="view_window">
+                <img class="bodyimg" src="img/form1.jpg">
+                <div>
+                    <p class="col1 p1">表单验证</p>
+                    <p class="p2">2018年5月10日</p>
+                    <p class="p3">js实现表单验证</p>
+                </div>
+                </a>
+            </div>
+
+            <!--每个项目-->
+            <div class="box3 boxnum2">
+                <a href="https://hwl9780.github.io/jdkj/work5/ToDolist.html" target="view_window">
+                <img class="bodyimg" src="img/list.jpg">
+                <div>
+                    <p class="col1 p1">实现ToDoList</p>
+                    <p class="p2">2018年5月14日</p>
+                    <p class="p3">js实现待办任务和清单管理</p>
+                </div>
+                </a>
+            </div>
+
+            <!--每个项目-->
+            <div class="box3 boxnum2">
+                <a href="https://hwl9780.github.io/jdkj/work6/page-1.html" target="view_window">
+                <img class="bodyimg" src="img/page-1.jpg">
+                <div>
+                    <p class="col1 p1">实现轮播图</p>
+                    <p class="p2">2018年5月17日</p>
+                    <p class="p3">js实现轮播图购物界面</p>
+                </div>
+                </a>
+            </div>
+
+            <!--每个项目-->
+            <div class="box3 boxnum2">
+                <a href="https://hwl9780.github.io/jdkj/work6/page-2.html" target="view_window">
+                <img class="bodyimg" src="img/page-2.jpg">
+                <div>
+                    <p class="col1 p1">实现放大镜效果</p>
+                    <p class="p2">2018年5月17日</p>
+                    <p class="p3">js实现购物商品放大镜效果</p>
+                </div>
+                </a>
+            </div>
+
+            <!--每个项目-->
+            <div class="box3 boxnum4">
+                <a href="https://hwl9780.github.io/jdkj/work7/canvas1.html" target="view_window">
+                <img class="bodyimg" src="img/canvas1.jpg">
+                <div>
+                    <p class="col1 p1">实现Canvas长按截图</p>
+                    <p class="p2">2018年5月23日</p>
+                    <p class="p3">canvas实现长按图片保存到本地</p>
+                </div>
+                </a>
+            </div>
+                <!--------------------------------这两个链接没有写好！！！！！！------------------------>
+            <div class="box3 boxnum3">
+                <a href="https://hwl9780.github.io/jdkj/moveweb/appzhuce.html" target="view_window">
+                <img class="bodyimg" src="img/zhuce1.jpg">
+                <div>
+                    <p class="col1 p1">移动端注册页面</p>
+                    <p class="p2">2018年4月10日</p>
+                    <p class="p3">flex布局实现响应式页面</p>
+                </div>
+                </a>
+            </div>
+
+            <div class="box3 boxnum3">
+                <a href="https://hwl9780.github.io/jdkj/moveweb/main.html" target="view_window">
+                <img class="bodyimg" src="img/yue1.jpg">
+                <div>
+                    <p class="col1 p1">移动端资产页面</p>
+                    <p class="p2">2018年4月10日</p>
+                    <p class="p3">flex布局实现移动端资产页面</p>
+                </div>
+                </a>
+            </div>
     </div>
     </section>
+    <script src="js/show.js"></script>
 </body>
 </html>
