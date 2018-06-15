@@ -1,0 +1,398 @@
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background:black;
+    text-align: center;
+    height: 3000px;/*这里设置了网页高度为了查看效果  后期可以去掉*/
+}
+.bg{
+    width:100%;
+    position: absolute;
+    z-index:-1;
+    left:0;
+}
+/*定义所有a标签去掉下划线  ul列表去掉符号*/
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #fff;/*导航栏字体颜色*/
+}
+
+
+/****************************************头部样式******************************/
+.footer{
+    width: 100%;
+    height: 50px;
+    background: #fff;
+}
+
+
+/***************************************导航样式******************************/
+/*导航主体*/
+.nav{
+    width: 100%;
+    height:80px;
+    background: rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 1000;
+}
+
+.nav .firstul{
+    margin: 0;
+    padding-left: 150px;
+    width: 70%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+.nav .firstul .firstli,
+.nav .firstul .firstli .firsta{
+    display: block;
+    width: 150px;
+    height:98%;
+    line-height: 80px;
+    float: left;
+    font-size: 1.1em;
+    color: #fff;/*导航栏字体颜色*/
+	
+}
+
+.firstli .secondul{
+
+	/*display:none;*/
+	position:absolute;
+}
+
+.firstli .secondul .secondli{
+
+	line-height:60px;
+}
+.nav .firstul .firstli .firsta:hover{
+    border-bottom: 3px solid red;
+    background: linear-gradient(to top, rgba(177, 15, 15, 0.4), rgba(51, 50, 50, 0.3)70%);
+}
+.secondul{
+    text-align: center;
+    width: 150px;
+    height:300px;
+    background: #fff;
+    background: linear-gradient(to bottom, rgba(177, 15, 15, 0.5)60%, rgba(51, 50, 50, 0.4));
+    top:80px;
+    margin: 0px;
+    padding: 0px;
+	display:none;
+   
+}
+
+
+.firstli:hover .secondul{
+    display:block;
+}
+.secondul li,
+.secondul li .seconda{
+    display: block;
+	text-align:center;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    color: rgb(185, 180, 180);/*导航栏字体颜色*/
+}
+.secondul li .seconda:hover{
+    color: #ff0008;
+}
+
+
+
+
+/*搜索栏*/
+.form1{
+    width: 25%;
+    margin: 0;
+    float: right;
+    line-height: 80px;
+    margin-right: 60px;
+    position: relative;
+    top:20px;
+    
+
+}
+.form1 input{
+    background:transparent;
+    width: 70%;
+    height:30px;
+    border-radius: 5px;
+    color: #fff;
+    border: 2px solid #c5464a;
+    float: right;
+    outline:none;
+    transition:width 0.5s;
+    -moz-transition:width 0.5s;
+    -webkit-transition:width 0.5s; 
+    -o-transition:width 0.5s;
+
+}
+.form1 input:focus{
+    transition:ease;
+    width: 100%;
+    transition:width 0.5s;
+    -moz-transition:width 0.5s;
+    -webkit-transition:width 0.5s; 
+    -o-transition:width 0.5s; 
+}
+.form1 button{
+    width: 50px;
+    height:33px;
+    background: #c5464a;
+    border: 0;
+    position: absolute;
+    right: 1px;
+    bottom:1px;
+    outline:none;
+    cursor: pointer;
+    color: rgb(185, 180, 180);
+}
+
+
+/***************************************主体样式******************************/
+#firstbox{
+    width: 1200px;
+    height: 3000px;
+    margin: 0 auto ;
+    background: rgba(0, 0, 0, 0.9);
+    margin-top: 400px;
+    color: rgb(185, 180, 180);
+}
+/*轮播图*/
+.sowing{
+    width: 50%;
+    height:600px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    
+}
+.sowing ul{
+    width: 1000%;
+    height:100%;
+    margin: 0;
+    padding: 0;
+    margin-left:-100%;
+}
+.sowing ul li{
+    width: 10%;
+    float:left;
+    
+}
+.sowing img{
+    width: 100%;
+    height:100%;
+    box-sizing: border-box;
+    
+}
+/*轮播图按钮*/
+.sowing .btn div{
+    width:30px;
+    height:40px;
+    background:rgba(112, 111, 111, 0.3);
+    color:#fff;
+    line-height:40px;
+    text-align:center;
+    cursor:pointer;
+    position:absolute;
+    top:50%;
+    margin-top: -150px;
+    display:none;
+    padding-top: 8px;
+    font-size: 1.5em;
+}
+.sowing .btn div.left{
+    left:0;
+}
+.sowing .btn div.right{
+    right:0;
+}
+.sowing:hover .btn div{
+    display:block;
+}
+/*轮播图右侧列表*/
+.bodyright{
+    position: relative;
+    float: right;
+    width: 50%;
+    text-align: left;
+    color: #fff;
+}
+#tit {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    
+}
+#tit ul{
+    margin: 0;
+    border-bottom: 1px solid rgb(185, 183, 183);
+}
+#tit ul li,
+#tit ul li a{
+    display: block;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    font-size: 16px;
+    color: #fff;
+    /*color: rgb(185, 180, 180);/*导航栏字体颜色*/ 
+    border-bottom: 1px solid rgb(185, 183, 183);   
+}
+#tit ul li a:hover{
+    border-bottom: 3px solid red;
+    color: #ff0008;
+}
+.text1{
+    width: 100%;
+    float: left;
+    position: absolute;
+}
+.text1 ul li{
+    width: 490px;
+    height: 35px;
+    color: #fff;
+}
+.text1 ul li a{
+    color: #fff;
+}
+.textdate{
+    float: right;
+    width: 50px;
+    color: #fff;
+}
+.text1 ul li a:hover{
+    color: #ff0008;
+}
+#t2,#t3,#t4{
+   display: none;
+}
+
+/*#tit ul li #bl1:hover #t1{
+    display: block;
+}
+
+#tit ul li #bl2:hover #t2{
+    display: block;
+}
+
+#tit ul li #bl3:hover #t3{
+    display: block;
+}
+
+#tit ul li #bl4:hover #t4{
+    display: block;
+}*/
+.clear{
+    clear:both;
+}
+
+
+#guodu-box{
+    width:100%;
+    height:40px;
+    line-height: 60px;
+    background:rgba(206, 8, 8, 0.288);
+    position: relative;
+    top:400px;
+}
+
+#guodu-box #guodu-left{
+    width:100px;
+    height: 40px;
+    line-height: 40px;
+    background:black;
+    position:absolute;
+    left:50px;
+    font-family: "Microsoft yahei";
+    
+}
+
+#guodu-box #guodu-right{
+    width:100px;
+    height: 40px;
+    line-height: 40px;
+    background:black;
+    position:absolute;
+    right:300px;
+     font-family: "Microsoft yahei";
+}
+
+
+#firstbox #person{
+    width:100%;
+    height:1000px;
+    position: absolute;
+    top:1000px;
+    
+}
+
+#firstbox #person .person-pic{
+    height: 150px;
+    width:100%;
+    line-height: 150px;
+    padding-top: 15px;
+   
+   
+}
+
+#firstbox #person .person-pic .pic-con{
+    width:100px;
+    height:130px;
+    display: block;
+    float: left;
+    position: relative;
+    left: 30px;
+    overflow: hidden;
+}
+
+
+#firstbox #person .person-pic .pic-con:hover{
+    border:2px solid #fff;
+    border-radius: 2px;
+}
+#firstbox #person .person-pic .pic-con:hover img{
+    width:120px;
+    height:150px;
+    margin-left:-10px;
+    
+}
+#firstbox #person .person-pic img{
+    width:100px;
+    height:130px;
+}
+
+#firstbox #person .person-pic .pic-text{
+    height: 20px;
+    line-height: 20px;
+    width: 1000px;
+    left: -180px;
+    margin:0;
+    font-size: 20px;
+    position: absolute;
+}
+
+#firstbox #person .person-pic .pic-text a{
+    z-index:1000px;
+}
+.pic-text a:hover{
+    color: #c5464a;
+}
+
+#firstbox #person .person-pic .pic-detail{
+    width:1000px;
+    height:100px;
+    margin:0;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    left:150px;
+}
